@@ -5,8 +5,7 @@
     width: 100vw;
     background-size: cover;
     z-index: -999;
-    background-image: url("https://github.com/Dhanush-2605/AirBNB_Web3/blob/main/Airbnb-starter/src/images/frontpagebg2.png?raw=true");
-  }
+}
   
   .containerGradinet {
     background-image: linear-gradient(rgb(0,0,0,0.75), rgb(0,0,0,0));
@@ -29,6 +28,7 @@
     align-items: center;
     width:93%;
     padding: 30px 60px;
+    /* flex-direction: column; */
   }
   
   .logo{
@@ -40,17 +40,21 @@
     width:100%;
     display: flex;
     justify-content: center;
+    /* flex-wrap: wrap; */
+    /* background-color: red; */
   }
   
   .searchFields {
     width:800px;
     background-color: white;
-    height:65px;
+    height:auto;
     border-radius: 100px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding-left: 30px;
+    flex-wrap: wrap;
+
   }
   
   .tabs{
