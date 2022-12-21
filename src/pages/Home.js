@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import bg from "../images/frontpagebg.png";
 import logo from "../images/airbnb.png";
-import {ConnectButton, Select, DatePicker, Input,Icon } from "web3uikit";
+import { ConnectButton, Select, DatePicker, Input, Icon } from "web3uikit";
 
 const Home = () => {
+  const [checkIn, setCheckIn] = useState(new Date());
+  const [checkOut, setCheckOut] = useState(new Date());
+  const [destination, setDestination] = useState("New York");
+  const [guests, setGuests] = useState(2);
+
   return (
     <>
       {/* <Link to="/rentals"> Rentals </Link> */}
@@ -33,7 +38,7 @@ const Home = () => {
             location
             <Select
               defaultOptionIndex={0}
-              onChange={(data) => console.log(data.label)}
+              onChange={(data) => setDestination(data.label)}
               options={[
                 {
                   id: "ny",
@@ -52,7 +57,7 @@ const Home = () => {
                   label: "Los Angeles",
                 },
               ]}
-              style={{backgroundColor:"red",width:"10px",height:"10px"}}
+              style={{}}
             />
           </div>
           <div className="vl" />
@@ -60,7 +65,7 @@ const Home = () => {
             Check In
             <DatePicker
               id="CheckIn"
-              onChnage={(event) => console.log(event.date)}
+              onChnage={(event) => setCheckIn(event.date)}
             />
           </div>
           <div className="vl" />
@@ -68,7 +73,7 @@ const Home = () => {
             Check Out
             <DatePicker
               id="CheckOut"
-              onChnage={(event) => console.log(event.date)}
+              onChnage={(event) => setCheckOut(event.date)}
             />
           </div>
           <div className="vl" />
@@ -78,11 +83,22 @@ const Home = () => {
               value={2}
               name="AddGuests"
               type="number"
-              onChange={(event) => console.log(Number(event.target.value))}
+              onChange={(event) => setGuests(Number(event.target.value))}
             />
           </div>
-          <div className="searchButton" >
-         <Icon fill="#fffffff" size={24} svg="search" />
+          <div className="searchButton">
+            <Link
+              to={"/rentals"}
+              state={{
+                destination: destination,
+                checkIn: checkIn,
+                checkOut: checkOut,
+                guests: guests,
+              }}
+            >
+              move
+            </Link>
+            {/* <Icon  size={24} /> */}
           </div>
         </div>
       </div>

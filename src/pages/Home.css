@@ -45,7 +45,8 @@
   }
   
   .searchFields {
-    width:800px;
+    width:1000px;
+    /* width: auto; */
     background-color: white;
     height:auto;
     border-radius: 100px;
@@ -76,6 +77,7 @@
     font-weight:bold;
     margin-top: 10px;
     width:160px;
+    width: auto;
   }
   
   
