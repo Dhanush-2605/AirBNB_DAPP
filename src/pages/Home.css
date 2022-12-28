@@ -42,21 +42,38 @@
     justify-content: center;
     /* flex-wrap: wrap; */
     /* background-color: red; */
+
   }
   
   .searchFields {
-    width:1000px;
-    /* width: auto; */
+    /* width:1000px; */
+    width: 60vw;
     background-color: white;
-    height:auto;
-    border-radius: 100px;
+    /* background-color: #EB4E5F; */
+
+    /* height:auto; */
+    /* width: 1000px; */
+    border-radius: 30px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+
     align-items: center;
-    padding-left: 30px;
+    /* padding: 5px 20px; */
+    padding-top:-30px;
+    
+    /* padding-left: 30px; */
     flex-wrap: wrap;
 
   }
+  #id1{
+    /* flex: 2; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: rebeccapurple; */
+  }
+
   
   .tabs{
     color:white;
@@ -73,13 +90,28 @@
   }
   
   .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     font-size: 12px;
     font-weight:bold;
     margin-top: 10px;
     width:160px;
     width: auto;
+    flex: 1;
+    
   }
-  
+  .inputs Select{
+    padding: 10px;
+    background-color: red;
+  }
+  .inputs h2{
+    margin-top: -8px;
+    padding: 0;
+    align-items: left;
+    text-align: left;
+  }
   
   .vl {
     position: relative;
@@ -96,6 +128,9 @@
     padding:10px;
     border-radius: 50%;
     transition: transform .4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .searchButton:hover {
