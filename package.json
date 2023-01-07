@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@web3uikit/core": "^0.2.38",
+    "@web3uikit/icons": "^0.2.37",
     "antd": "^4.23.4",
     "assert": "^2.0.0",
     "crypto-browserify": "^3.12.0",

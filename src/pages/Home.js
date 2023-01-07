@@ -72,7 +72,7 @@ const Home = () => {
             <h2>check in</h2>
             <DatePicker
               id="CheckIn"
-              onChnage={(event) => setCheckIn(event.date)}
+              onChange={(event) => setCheckIn(event.date)}
             />
           </div>
           {/* <div className="vl" /> */}
@@ -80,7 +80,7 @@ const Home = () => {
             <h2>check out</h2>
             <DatePicker
               id="CheckOut"
-              onChnage={(event) => setCheckOut(event.date)}
+              onChange={(event) => setCheckOut(event.date)}
             />
           </div>
           {/* <div className="vl" /> */}
