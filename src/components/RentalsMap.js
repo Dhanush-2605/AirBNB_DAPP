@@ -1,12 +1,40 @@
-import React from 'react'
-import { useState,useEffect } from 'react';
-const RentalsMap = ({location}) => {
-    useEffect(()=>{
+import React from "react";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import { useState, useEffect } from "react";
+const RentalsMap = ({ locations, google }) => {
+  const [center, setCenter] = useState();
 
-    },[])
+  useEffect(() => {
+    let arr = Object.keys(locations);
+    console.log("arr" + arr);
+    let getLat = (key) => locations[key]["lat"];
+    let avgLat = arr.reduce((a, c) => a + Number(getLat(c), 0) / arr.length);
+
+    // let arr1=Object.keys(locations);
+    // console.log("arr" + arr);
+    let getLng = (key) => locations[key]["lng"];
+    let avgLng = arr.reduce((a, c) => a + Number(getLng(c), 0) / arr.length);
+    setCenter({ lat: avgLat, lng: avgLng });
+  }, [locations]);
+
   return (
-    <div>RentalsMap</div>
-  )
-}
+    <div>
+      {center && (
+        <Map
+          google={google}
+          containerStyle={{
+            width: "50vw",
+            height: "calc(100vh-135px)",
+          }}
+          center={center}
+          zoom={13}
+          disableDefaultUI={true}
+        ></Map>
+      )}
+    </div>
+  );
+};
 
-export default RentalsMap;
+export default GoogleApiWrapper({
+  apiKey: "",
+})(RentalsMap);

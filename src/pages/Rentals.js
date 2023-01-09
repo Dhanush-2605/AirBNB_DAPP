@@ -105,7 +105,7 @@ const Rentals = () => {
             })}
         </div>
         <div className="rentalsContentR">
-          <RentalsMap location={cords}/>
+          <RentalsMap locations={cords}/>
         </div>
       </div>
       <div></div>
