@@ -1,7 +1,7 @@
 import React from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import { useState, useEffect } from "react";
-const RentalsMap = ({ locations, google }) => {
+const RentalsMap = ({ locations, google,setHighLight }) => {
   const [center, setCenter] = useState();
 
   useEffect(() => {
@@ -27,14 +27,20 @@ const RentalsMap = ({ locations, google }) => {
             height: "calc(100vh-135px)",
           }}
           center={center}
+          initialCenter={locations[0]}
           zoom={13}
           disableDefaultUI={true}
-        ></Map>
+          
+        >
+          {locations.map((coords,i)=>{
+            <Marker position={coords} onClick={()=>setHighLight(i)} />
+          })}
+        </Map>
       )}
     </div>
   );
 };
 
 export default GoogleApiWrapper({
-  apiKey: "",
+  apiKey: "AIzaSyBXemIsUdZzCGdV99cdomP5NU3HqXf_4xU",
 })(RentalsMap);
